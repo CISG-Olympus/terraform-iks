@@ -1,43 +1,40 @@
-module "iks-amslab" {
-  #source              = "../../terraform-intersight-iks"
-  source              = "app.terraform.io/Cisco-IST-TigerTeam/iks-amslab/intersight"
-  version             = "0.9.23"
-  
+module "iks" {
+  source  = "terraform-cisco-modules/iks/intersight"
+  version = "1.0.1"
+
   # Infra Config Policy Information
-  cluster_name        = "cluster-b1"
-  cluster_action      = "Deploy"
-  vc_target_name      = "vcenter-amslab.cisco.com"
-  vc_portgroup        = [ "vm-network-99" ]
-  vc_datastore        = "HX-ACI" 
-  vc_cluster          = "HX-ACI"
-  vc_resource_pool    = "tenant-b"
-  vc_password         = var.vc_password
+  cluster_name     = "iks-demo-terraform"
+  cluster_action   = "Deploy"
+  vc_target_name   = "10.52.232.60"
+  vc_portgroup     = ["Storage Controller Management Network"]
+  vc_datastore     = "Athena-DS1"
+  vc_cluster       = "Athena"
+  vc_resource_pool = "default"
+  vc_password      = var.vc_password
 
   # IP Pool Information
-  ip_starting_address = "10.61.125.210"
-  ip_pool_size        = "10"
-  ip_netmask          = "255.255.255.0"
-  ip_gateway          = "10.61.125.1"
-  ip_primary_dns      = "10.61.124.15"
-  ip_secondary_dns    = "10.61.124.16"
-  ip_primary_ntp      = "ntp.esl.cisco.com"
+  ip_starting_address = "10.52.233.86"
+  ip_pool_size        = "15"
+  ip_netmask          = "255.255.252.0"
+  ip_gateway          = "10.52.232.1"
+  dns_servers         = ["144.254.71.184"]
+  ntp_servers         = ["10.52.136.1"]
 
   # Network Configuration Settings
-  domain_name         = "amslab.cisco.com"
-  timezone            = "Europe/Amsterdam"
-  http_proxy          = "proxy.esl.cisco.com"
-  https_proxy         = "proxy.esl.cisco.com"
-  http_proxy_port     = 80
-  https_proxy_port    = 80
+  domain_name          = "cisco.com"
+  timezone             = "Europe/London"
+  proxy_http_hostname  = "proxy.esl.cisco.com"
+  proxy_https_hostname = "proxy.esl.cisco.com"
+  proxy_http_port      = 80
+  proxy_https_port     = 80
 
   # Cluster information
-  ssh_user            = "iksadmin"
-  ssh_key             = var.ssh_key
-  worker_size         = "small"
-  worker_count        = 2
-  master_count        = 1
+  ssh_user     = "iksadmin"
+  ssh_key      = var.ssh_key
+  worker_size  = "small"
+  worker_count = 2
+  master_count = 1
+
   # Organization
-  organization        = var.organization
+  organization = var.organization
 }
-
-
