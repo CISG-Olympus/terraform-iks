@@ -6,12 +6,11 @@ terraform {
     }
   }
   
-  provider "intersight" {
+provider "intersight" {
     apikey    = var.api_key
     secretkey = var.secretkey
     endpoint  = "https://intersight.com"
   }
-}
 
 #  backend "remote" {
 #    hostname     = "app.terraform.io"
@@ -20,4 +19,3 @@ terraform {
 #      name = "terraform-iks"
 #    }
 #  }
-}
