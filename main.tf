@@ -5,18 +5,18 @@ terraform {
       version = "1.0.11"
     }
   }
-  # Does not understand provider - why?
-  # provider "intersight" {
-  #   apikey    = var.api_key
-  #   secretkey = var.secretkey
-  #   endpoint  = "https://intersight.com"
-  # }
-
-  backend "remote" {
-    hostname     = "app.terraform.io"
-    organization = "CISG-Olympus"
-    workspaces {
-      name = "terraform-iks"
-    }
+  
+  provider "intersight" {
+    apikey    = var.api_key
+    secretkey = var.secretkey
+    endpoint  = "https://intersight.com"
   }
+
+#  backend "remote" {
+#    hostname     = "app.terraform.io"
+#    organization = "CISG-Olympus"
+#    workspaces {
+#      name = "terraform-iks"
+#    }
+#  }
 }
