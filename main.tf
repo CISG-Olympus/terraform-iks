@@ -12,11 +12,3 @@ provider "intersight" {
   secretkey = var.secretkey
   endpoint  = "https://intersight.com"
 }
-
-#  backend "remote" {
-#    hostname     = "app.terraform.io"
-#    organization = "CISG-Olympus"
-#    workspaces {
-#      name = "terraform-iks"
-#    }
-#  }
