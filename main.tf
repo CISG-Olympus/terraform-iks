@@ -11,6 +11,7 @@ terraform {
     secretkey = var.secretkey
     endpoint  = "https://intersight.com"
   }
+}
 
 #  backend "remote" {
 #    hostname     = "app.terraform.io"
