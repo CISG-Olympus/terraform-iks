@@ -9,7 +9,7 @@ module "iks" {
   vc_portgroup     = ["Storage Controller Management Network"]
   vc_datastore     = "Athena-DS1"
   vc_cluster       = "Athena"
-  vc_resource_pool = "default"
+  vc_resource_pool = ""
   vc_password      = var.vc_password
 
   # IP Pool Information
