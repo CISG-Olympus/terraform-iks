@@ -3,7 +3,7 @@ module "iks" {
   version = "1.0.0"
 
   # Infra Config Policy Information
-  cluster_name     = "iks-via-terraform"
+  cluster_name     = "iks-terraform"
   cluster_action   = "Deploy"
   vc_target_name   = "10.52.232.60"
   vc_portgroup     = ["Storage Controller Management Network"]
@@ -18,7 +18,7 @@ module "iks" {
   ip_netmask          = "255.255.252.0"
   ip_gateway          = "10.52.232.1"
   dns_servers         = ["144.254.71.184"]
-  ntp_servers         = ["10.52.136.1"]
+  ntp_servers         = ["10.50.136.1"]
 
   # Network Configuration Settings
   domain_name          = "cisco.com"
@@ -32,7 +32,7 @@ module "iks" {
   ssh_user     = "iksadmin"
   ssh_key      = var.ssh_key
   worker_size  = "small"
-  worker_count = 2
+  worker_count = 1
   master_count = 1
 
   # Organization
