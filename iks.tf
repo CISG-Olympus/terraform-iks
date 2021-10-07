@@ -3,7 +3,7 @@ module "iks" {
   version = "2.0.3"
 
   # Infra Config Policy Information
-  cluster_name     = "iks-cluster-test"
+  cluster_name     = "iks-cluster-demo"
   cluster_action   = "Deploy"
   vc_target_name   = "10.52.232.60"
   vc_portgroup     = ["Storage Controller Management Network"]
