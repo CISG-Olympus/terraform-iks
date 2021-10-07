@@ -3,7 +3,7 @@ module "iks" {
   version = "1.0.0"
 
   # Infra Config Policy Information
-  cluster_name     = "iks-terraform"
+  cluster_name     = "iks-cluster1"
   cluster_action   = "Deploy"
   vc_target_name   = "10.52.232.60"
   vc_portgroup     = ["Storage Controller Management Network"]
