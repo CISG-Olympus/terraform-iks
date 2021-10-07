@@ -2,7 +2,7 @@ terraform {
   required_providers {
     intersight = {
       source  = "ciscodevnet/intersight"
-      version = "1.0.13"
+      version = "1.0.11"
     }
   }
 }
