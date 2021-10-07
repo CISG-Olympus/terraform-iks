@@ -1,9 +1,9 @@
 module "iks" {
   source  = "terraform-cisco-modules/iks/intersight"
-  version = "1.0.0"
+  version = "2.0.3"
 
   # Infra Config Policy Information
-  cluster_name     = "iks-cluster1"
+  cluster_name     = "iks-cluster-test"
   cluster_action   = "Deploy"
   vc_target_name   = "10.52.232.60"
   vc_portgroup     = ["Storage Controller Management Network"]
