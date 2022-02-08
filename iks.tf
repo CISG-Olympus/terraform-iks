@@ -1,9 +1,9 @@
 module "iks" {
   source  = "terraform-cisco-modules/iks/intersight"
-  version = "2.0.3"
+  version = "2.2.1"
 
   # Infra Config Policy Information
-  cluster_name     = "iks-cluster-demo"
+  cluster_name     = "iks-zeus01"
   cluster_action   = "Deploy"
   vc_target_name   = "10.52.232.60"
   vc_portgroup     = ["Storage Controller Management Network"]
@@ -14,7 +14,7 @@ module "iks" {
 
   # IP Pool Information
   ip_starting_address = "10.52.233.86"
-  ip_pool_size        = "15"
+  ip_pool_size        = "25"
   ip_netmask          = "255.255.252.0"
   ip_gateway          = "10.52.232.1"
   dns_servers         = ["144.254.71.184"]
